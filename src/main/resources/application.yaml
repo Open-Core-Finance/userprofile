@@ -69,7 +69,7 @@ tech:
         enabled:
           common: true
       public-key: classpath:public_key.der
-      private-key:
+      private-key: classpath:private_key.der
       no-authen-urls:
         - /
         - /void
@@ -87,16 +87,6 @@ tech:
     encryption:
       plain: test
       encoded: ENC(O5MFWIMMOz+V3iItOVY60g==)
-    initial:
-      name-separator: _
-      version-separator: .
-      data-regex:
-        permission:
-          file-name-regex: classpath:initial/*permissions*.json
-          replace-if-existed: true
-        internal-api:
-          file-name-regex: classpath:initial/*internal_api*.json
-          replace-if-existed: true
 export:
   format:
     date: yyyy/MM/dd
