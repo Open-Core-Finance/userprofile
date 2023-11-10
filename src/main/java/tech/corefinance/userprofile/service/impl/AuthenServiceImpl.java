@@ -68,6 +68,8 @@ public class AuthenServiceImpl implements AuthenService {
         loginSession.setRefreshToken(refreshToken);
         loginSession.setValidToken(true);
         loginSession.setUserProfile(userProfile);
+        loginSession.setVerifyKey(jwtTokenDto.getVerifyKey());
+        loginSessionRepository.invalidateOldLogins(loginSession.getVerifyKey());
         loginSession = loginSessionRepository.save(loginSession);
 
         // Login DTO
