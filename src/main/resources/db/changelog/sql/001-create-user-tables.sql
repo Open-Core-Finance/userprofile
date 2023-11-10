@@ -88,6 +88,7 @@ CREATE TABLE IF NOT EXISTS login_session
     refresh_token character varying(32600),
     valid_token boolean,
     user_profile_id character varying(255),
+    verify_key character varying(255),
     CONSTRAINT login_session_pkey PRIMARY KEY (id),
     CONSTRAINT fkb96uupl2xe8shjn1sca7mvijk FOREIGN KEY (user_profile_id)
         REFERENCES user_profile (id) MATCH SIMPLE
