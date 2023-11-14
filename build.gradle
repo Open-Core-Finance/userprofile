@@ -60,7 +60,7 @@ jar {
 }
 
 bootJar {
-    enabled = false
+    enabled = true
 }
 
 dependencies {
