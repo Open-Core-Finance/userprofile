@@ -1,5 +1,6 @@
 #Logging
 logging.config: classpath:logback.xml
+server.port: 8080
 
 spring:
   main:
@@ -13,14 +14,14 @@ spring:
       write-enums-using-to-string: false
       FAIL_ON_EMPTY_BEANS: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/core_finance_userprofile
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/${DB_NAME:core_finance_userprofile}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
     hikari:
       connection-test-query: SELECT 1
-      maximum-pool-size: 10 # Adjust as needed
-      minimum-idle: 2
+      maximum-pool-size: ${DB_MAX_CONNECTIONS:10}
+      minimum-idle: ${DB_MIN_CONNECTIONS:2}
       idle-timeout: 30000
       pool-name: userprofile_service_pool
   jpa:
@@ -68,6 +69,7 @@ tech:
         login-mode: SINGLE_LOGIN_PER_APP
         enabled:
           common: true
+        max-login-fail-allowed: 3
       public-key: classpath:public_key.der
       private-key: classpath:private_key.der
       no-authen-urls:
@@ -102,3 +104,12 @@ jasypt:
     string-output-type: base64
     key-obtention-iterations: 1000
     pool-size: 1
+
+management:
+  server:
+    port: ${server.port}
+  endpoints:
+    web:
+      base-path: /actuator
+      enabled: true
+      exposure.include: '*'

@@ -64,12 +64,16 @@ bootJar {
 }
 
 dependencies {
+    // Spring boot
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+
     // Internal
     implementation group: 'tech.corefinance', name: 'microservice-common', version: "${internalCommonVersion}"
     implementation group: 'tech.corefinance', name: 'microservice-common-jpa', version: "${internalCommonJpaVersion}"
 
     // Database
     implementation group: 'org.postgresql', name: 'postgresql', version: "${postgresqlVersion}"
+    implementation group: 'com.google.cloud.sql', name: 'postgres-socket-factory', version: "${gcloudPostgresSocketVersion}"
 
     // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
