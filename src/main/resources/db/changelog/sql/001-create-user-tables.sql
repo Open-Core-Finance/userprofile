@@ -1,10 +1,5 @@
--- db/changelog/sql/001-create-product-tables.sql
-
 -- Liquibase formatted SQL
-
--- ChangeSet
--- ChangeSet author: Trung Doan
--- ChangeSet id: 001
+-- ChangeSet Trung.Doan:1 labels:permission,basic-table runOnChange:true
 
 CREATE TABLE IF NOT EXISTS anonymous_url_access
 (
@@ -117,4 +112,3 @@ CREATE TABLE IF NOT EXISTS user_profile_role
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 );
--- /ChangeSet
