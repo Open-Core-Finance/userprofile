@@ -86,6 +86,26 @@ tech:
         - .springframework.
         - .springdoc.
         - .test.
+      url-cors:
+        cors-configurations:
+          - url-pattern: /v3/api-docs/*
+            allowed-origins:
+              - http://localhost:4200
+            allowed-methods:
+              - GET
+            allowed-headers: '*'
+          - url-pattern: /**
+            allowed-origins:
+              - http://localhost:4200
+              - http://*.corefinance.tech
+            allowed-methods:
+              - GET
+              - PUT
+              - OPTIONS
+              - DELETE
+              - POST
+              - PATCH
+            allowed-headers: '*'
     encryption:
       plain: test
       encoded: ENC(O5MFWIMMOz+V3iItOVY60g==)
