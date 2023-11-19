@@ -29,22 +29,22 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: compute-engine-sql-secrets
-                  key: username
+                  key: userprofile_username
             - name: DB_PASS
               valueFrom:
                 secretKeyRef:
                   name: compute-engine-sql-secrets
-                  key: password
+                  key: userprofile_password
             - name: DB_NAME
               valueFrom:
                 secretKeyRef:
                   name: compute-engine-sql-secrets
-                  key: database
+                  key: userprofile_database
             - name: DB_HOST
               valueFrom:
                 secretKeyRef:
                   name: compute-engine-sql-secrets
-                  key: dbhost
+                  key: userprofile_dbhost
             - name: DB_MAX_CONNECTIONS
               value: "5"
             - name: DB_MIN_CONNECTIONS
