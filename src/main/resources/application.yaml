@@ -95,9 +95,7 @@ tech:
               - GET
             allowed-headers: '*'
           - url-pattern: /**
-            allowed-origins:
-              - http://localhost:4200
-              - http://*.corefinance.tech
+            allowed-origins: '*'
             allowed-methods:
               - GET
               - PUT
