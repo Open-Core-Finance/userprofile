@@ -11,3 +11,4 @@ INSERT INTO anonymous_url_access (id) VALUES ('/v3/api-docs') ON CONFLICT DO NOT
 INSERT INTO anonymous_url_access (id) VALUES ('/v3/api-docs/*') ON CONFLICT DO NOTHING;
 INSERT INTO anonymous_url_access (id) VALUES ('/actuator') ON CONFLICT DO NOTHING;
 INSERT INTO anonymous_url_access (id) VALUES ('/actuator/*') ON CONFLICT DO NOTHING;
+INSERT INTO anonymous_url_access (id) VALUES ('/index') ON CONFLICT DO NOTHING;
