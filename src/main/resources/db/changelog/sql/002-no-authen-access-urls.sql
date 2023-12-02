@@ -21,3 +21,5 @@ INSERT INTO anonymous_url_access (url) VALUES ('/v3/api-docs/*') ON CONFLICT DO 
 INSERT INTO anonymous_url_access (url) VALUES ('/actuator') ON CONFLICT DO NOTHING;
 INSERT INTO anonymous_url_access (url) VALUES ('/actuator/*') ON CONFLICT DO NOTHING;
 INSERT INTO anonymous_url_access (url) VALUES ('/index') ON CONFLICT DO NOTHING;
+INSERT INTO anonymous_url_access (url) VALUES ('/authentication/login') ON CONFLICT DO NOTHING;
+INSERT INTO anonymous_url_access (url) VALUES ('/authentication/refresh-token') ON CONFLICT DO NOTHING;
