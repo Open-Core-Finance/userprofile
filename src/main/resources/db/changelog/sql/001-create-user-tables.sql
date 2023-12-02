@@ -1,11 +1,6 @@
 -- Liquibase formatted SQL
 -- ChangeSet Trung.Doan:1 labels:permission,basic-table runOnChange:true
 
-CREATE TABLE IF NOT EXISTS anonymous_url_access
-(
-    id character varying(255) PRIMARY KEY
-);
-
 CREATE TABLE IF NOT EXISTS resource_action
 (
     id character varying(255) DEFAULT gen_random_uuid()::character varying(255) PRIMARY KEY,

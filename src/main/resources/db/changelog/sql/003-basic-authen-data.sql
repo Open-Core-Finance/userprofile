@@ -14,8 +14,8 @@ INSERT INTO user_profile (id, activated, address, birthday, display_name, email,
 INSERT INTO user_profile_role(user_profile_id, role_id) VALUES ('01', 'SystemAdmin') ON CONFLICT DO NOTHING;
 
 -- Authen
-INSERT INTO anonymous_url_access (id) VALUES ('/authentication/login') ON CONFLICT DO NOTHING;
-INSERT INTO anonymous_url_access (id) VALUES ('/authentication/refresh-token') ON CONFLICT DO NOTHING;
+INSERT INTO anonymous_url_access (url) VALUES ('/authentication/login') ON CONFLICT DO NOTHING;
+INSERT INTO anonymous_url_access (url) VALUES ('/authentication/refresh-token') ON CONFLICT DO NOTHING;
 
 INSERT INTO permission (id, action, control, request_method, resource_type, role_id, url)
   VALUES ('26ff0fb6-233b-4b03-8cc6-39528de92325', 'ANY', 'ALLOWED', NULL, 'attemptedlogin', 'SystemAdmin', NULL) ON CONFLICT DO NOTHING;
